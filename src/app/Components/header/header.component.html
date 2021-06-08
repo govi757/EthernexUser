@@ -1,0 +1,131 @@
+<app-loader></app-loader>
+<header class="main-header ">
+    <a href="index.html" class="logo-holder"><img src="../assets/images/logo-header.png" alt=""></a>
+    <a href="javascript:void(0);" class="add-list color-bg modal-open"> Get a Quote <span><i
+                class="fal fa-layer-plus"></i></span></a>
+
+    <!-- BEGIN :: NAV BTN -->
+    <div (click)="openMenu()" class="nav-button-wrap color-bg">
+        <div class="nav-button">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <!-- END :: NAV BTN -->
+
+    <!-- BEGIN :: NAVIGATION -->
+    <div class="nav-holder main-menu hideOnMob">
+        <nav>
+            <ul class="no-list-style">
+                <li>  <a (click)="navigationClicked('/ethernex/home')"> Home </a> </li>
+                <li> <a (click)="navigationClicked('/ethernex/overview')"> Overview </a> </li>
+                <li>
+                    <a> Services <i class="fa fa-caret-down"></i></a>
+                    <ul class="options">
+                        <li><a (click)="navigationClicked('/ethernex/designService')"> Design </a></li>
+                        <li><a (click)="navigationClicked('/ethernex/developmentService')"> Development </a></li>
+                        <li><a (click)="navigationClicked('/ethernex/itInfraService')"> It Infra </a></li>
+                        <li><a (click)="navigationClicked('/ethernex/digitalMarketing')"> Digital Marketing </a></li>
+                    </ul>
+                </li>
+                <li> <a (click)="navigationClicked('/ethernex/portfolio')"> Portfolio </a> </li>
+                <!-- <li> <a (click)="navigationClicked('/blog')"> Blog </a> </li> -->
+                <li> <a (click)="navigationClicked('/ethernex/faq')"> FAQ </a> </li>
+                <li> <a (click)="navigationClicked('/ethernex/contactus')"> Contact Us </a> </li>
+            </ul>
+        </nav>
+    </div>
+    <div *ngIf="showMobileOptions" class="mobileHeader vismobmenu">
+            <i *ngIf="showMobileServices" (click)="showMobileServices=!showMobileServices" class="mx-1 fa fa-arrow-left" aria-hidden="true"></i>
+        <nav>
+            
+            <ul *ngIf="!showMobileServices">
+                <li>
+                    <div (click)="navigationClicked('/ethernex/home')"> Home </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/overview')"> Overview </div>
+                </li>
+                <li>
+                    <div (click)="showMobileServices=!showMobileServices"> Services </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/portfolio')"> Portfolio </div>
+                </li>
+                <!-- <li>
+                    <div (click)="navigationClicked('/blog')"> Blog </div>
+                </li> -->
+                <li>
+                    <div (click)="navigationClicked('/ethernex/faq')"> FAQ </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/contactus')"> Contact Us </div>
+                </li>
+            </ul>
+            <ul *ngIf="showMobileServices" class="options">
+                <li>
+                    <div (click)="navigationClicked('/ethernex/designService')"> Design </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/developmentService')"> Development </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/itInfraService')"> It Infra </div>
+                </li>
+                <li>
+                    <div (click)="navigationClicked('/ethernex/digitalMarketing')"> Digital Marketing </div>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+    <!-- END :: NAVIGATION -->
+
+</header>
+
+<!-- BEGIN :: QUOTE MODAL -->
+<div class="main-register-wrap modal">
+    <div class="reg-overlay"></div>
+    <div class="main-register-holder tabs-act">
+        <div class="main-register fl-wrap  modal_main">
+            <div class="main-register_title">Welcome to <span><strong> Wezen </strong> </span></div>
+            <div class="close-reg"><i class="fal fa-times"></i></div>
+
+            <div class="tabs-container">
+                <div class="tab">
+                    <div class="tab">
+                        <div id="tab-2" class="tab-content first-tab">
+                            <div class="custom-form">
+                                <!-- <form > -->
+                                <label> Services <span>*</span></label>
+                                <select data-placeholder="Category"
+                                    class="chosen-select no-search-select no-radius form-control "
+                                    [(ngModel)]="emailBody.service">
+                                    <option> {{'Select Service'}} </option>
+                                    <option *ngFor="let service of serviceList" [value]="service.title">
+                                        {{service.title}} </option>
+
+                                </select>
+
+                                <label class="mtop15">Name <span>*</span> </label>
+                                <input name="name" [(ngModel)]="emailBody.name" type="text">
+
+                                <label>Email <span>*</span></label>
+                                <input [(ngModel)]="emailBody.email" name="email" type="text">
+
+                                <label>Phone number <span>*</span></label>
+                                <input [(ngModel)]="emailBody.phoneNumber" name="phone" type="text" value="">
+
+                                <div class="clearfix"></div>
+                                <button
+                                    [disabled]="emailBody.name==''||emailBody.email==''||emailBody.phoneNumber==''||emailBody.service==''"
+                                    class="btn float-btn color2-bg" (click)="sendEmail()"> Send <i
+                                        class="fas fa-caret-right"></i></button>
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

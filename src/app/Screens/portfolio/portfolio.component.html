@@ -1,0 +1,109 @@
+ <app-header></app-header>
+ <!-- BEGIN :: WARPPER -->
+ <div id="wrapper">
+    <div class="content">
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <div class="bg par-elem" data-bg="../assets/images/bg/11.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay op7"></div>
+            <div class="container">
+                <div class="section-title center-align big-title">
+                    <h2><span> {{basicInfo.title || 'Portfolio'}} </span></h2>
+                    <span class="section-separator"></span>
+                    <p>{{ basicInfo.description || 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, exercitationem!' }}</p>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="javascript:void(0);" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>  
+            </div>
+        </section>
+        
+        <section style="min-height:300px">
+            <div class="container">
+                <div class="grid masonry-with-columns-2">
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="0" *ngFor="let portfolio of portFolioList" >
+                            <a (click)="openModal(portfolio)" style="cursor:pointer" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            [src]="portfolio.imageUrl"
+                            alt="Fatima + Rashidh &#8211; Couple Portraits"
+                            />
+                        </a>
+                    </figure>
+
+                    <!-- <figure class="c-masonry__item js-masonry__item" data-attribute="5">
+                        <a href="../assets/images/places/img-3.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/places/img-3.jpg"
+                            alt="Priyaa Sharma &#8211; Bridal Portraits"
+                            />
+                        </a>
+                    </figure>
+
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="1">
+                        <a href="../assets/images/all/2.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/all/2.jpg"
+                            alt="Sruthi &#8211; Bridal Portraits"
+                            />
+                        </a>
+                    </figure>
+
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="6">
+                        <a href="../assets/images/places/img-4.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/places/img-4.jpg"
+                            alt="Priyaa Sharma + Surresh Rajha &#8211; Candid Moments"
+                            />
+                        </a>
+                    </figure>
+
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="3">
+                        <a href="../assets/images/places/img-1.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/places/img-1.jpg"
+                            alt="Mayuri Naguleshwaran &#8211; Bridal Portraits"
+                            />
+                        </a>
+                    </figure>
+
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="4">
+                        <a href="../assets/images/places/img-2.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/places/img-2.jpg"
+                            alt="Mayuri Naguleshwaran +Krishnaraj Muthukumar &#8211; Rituals"
+                            />
+                        </a>
+                    </figure>
+
+                    <figure class="c-masonry__item js-masonry__item" data-attribute="2">
+                        <a href="../assets/images/all/3.jpg" data-lightbox="gallery" data-title="Our external tables and front walls with retro aspect">
+                            <img
+                            class="c-masonry__img js-masonry__img"
+                            src="../assets/images/all/3.jpg"
+                            alt="Sruthi + Sabarish &#8211; Candid Moments"
+                            />
+                        </a>
+                    </figure> -->
+                </div>
+            </div>
+        </section>
+    </div>
+   
+</div>
+<!-- END :: WARPPER -->
+<app-footer></app-footer>
+<div class="wezenModal" *ngIf="showPortfolioModal">
+    <div (click)="closeModal()"
+    style="position: fixed;width: 100%;height: 100vh;background-color: #000;top:0;left:0;z-index: 99;opacity: 0.3;">
+</div>
+<div class="card my-5" style="width: 70%;z-index: 99;min-height: 500px;">
+<img [src]="selectedItem.imageUrl" style="height: 500px;width: 100%;"/>
+<h6>{{selectedItem.title||'NA'}}</h6>
+<h6 >{{selectedItem.description||'NA'}}</h6>
+</div>
+</div>

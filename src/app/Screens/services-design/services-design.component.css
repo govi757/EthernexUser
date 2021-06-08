@@ -1,0 +1,30 @@
+.services {
+    -webkit-animation: fade 1s;
+    animation: fade 1s;
+    -moz-animation: fade 1s;
+    -o-animation: fade 1s;
+    }
+    
+    @-webkit-keyframes services {
+    0% {opacity: 0.2} 
+    50% {opacity: 0.7}
+    100% {opacity:1}
+    }
+    
+    @-moz-keyframes services{
+        0% {opacity: 0.2} 
+    50% {opacity: 0.7}
+    100% {opacity:1}
+    }
+    
+    @keyframes services {
+        0% {opacity: 0.2} 
+        50% {opacity: 0.7}
+        100% {opacity:1}
+        }
+    @-o-keyframes services {
+        0% {opacity: 0.2} 
+        50% {opacity: 0.7}
+        100% {opacity:1}
+    
+    }

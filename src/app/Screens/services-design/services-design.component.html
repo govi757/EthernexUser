@@ -1,0 +1,224 @@
+ <app-header></app-header>
+ <!-- BEGIN :: WARPPER -->
+ <div id="wrapper">
+    <div class="content">
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <img class="bg par-elem" [src]="basicInfo.imageUrl||'../assets/images/bg/11.jpg'" data-scrollax="properties: { translateY: '30%' }"/>
+            <div class="overlay op7"></div>
+            <div class="container">
+                <div class="section-title center-align big-title">
+                    <h2><span> {{basicInfo.title||'Let Your Design Speak'}} </span></h2>
+                    <span class="section-separator"></span>
+                    <p> {{basicInfo.description||'Build your Company’s Visual Impact with Us'}} </p>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="javascript:void(0);" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>  
+            </div>
+        </section>
+
+        <!-- BEGIN :: MISSION VISION -->
+        <section id="sec1" class="xs-pad0" data-scrollax-parent="true">
+            <div class="container big-container">
+                <!--about-wrap -->
+                <div class="about-wrap">
+                    <div class="row">
+                        <div class="col-md-6 hidden-sm">
+                            <div class="list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                <img [src]="designServicesImage||'../assets/images/all/55.jpg'" class="respimg" alt=""/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab_text">
+                                <div class="ab_text-title fl-wrap">
+                                    <h3> {{basicInfo.title||'Design Service'}}</h3>
+                                </div>
+                                <div class="visible-sm visbile-xs list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                    <img [src]="designServicesImage||'../assets/images/all/55.jpg'" class="respimg" alt=""/>
+                                </div>
+                                <p> {{basicInfo.description1||'We understand the impact that visual
+                                    designs leave on your customer, so we plan
+                                    & deliver anomalous services, from product
+                                    photography or videos to engaging graphics
+                                    and high-performance sites. We craft
+                                    designs that improve a Brand/Product
+                                    aesthetic appeal and usability and also
+                                    create an interface to optimize the user
+                                    experience and drive conversion with the
+                                    latest tools and techniques. We ensure a
+                                    comprehensive package for all your design
+                                    needs under one roof.'}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END :: MISSION VISION -->
+
+        <!-- BEGIN :: WHAT WE OFFER -->
+        <section>
+            <div class="container big-container">
+                <div class="section-title">
+                    <h2><span> What we offer </span></h2>
+                    <div class="section-subtitle">Best Listings</div>
+                    <span class="section-separator"></span>
+                </div>
+                <div class="listing-filters gallery-filters fl-wrap">
+                    <a [ngClass]="{'gallery-filter-active': activeTab === 'brandingLogo'}" (click)="changeTab('brandingLogo')" class="gallery-filter" data-filter=".branding"> Branding & Logo </a>
+                    <a [ngClass]="{'gallery-filter-active': activeTab === 'graphicDesign'}" (click)="changeTab('graphicDesign')" class="gallery-filter" data-filter=".graphic"> Graphic Design</a>
+                    <a [ngClass]="{'gallery-filter-active': activeTab === 'UiUxDesign'}" (click)="changeTab('UiUxDesign')" class="gallery-filter" data-filter=".uiux"> UI/UX Design</a>
+                    <a [ngClass]="{'gallery-filter-active': activeTab === 'videoProduction'}" (click)="changeTab('videoProduction')" class="gallery-filter" data-filter=".video"> Video Production </a>
+                </div>
+                <div [@serviceAnim]="isOpen ? 'open' : 'closed'"  class=" grid-item-holder gallery-items fl-wrap" *ngFor="let service of servicesListShown">
+                    <!-- BEGIN :: GALLERY ITEM -->
+                    <div class="about-wrap gallery-item big branding">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                    <img [src]="service.imageUrl||'../assets/images/all/55.jpg'" class="respimg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="ab_text">
+                                    <div class="ab_text-title fl-wrap">
+                                        <h3> {{service.title||'Brandilng Logo'}}</h3>
+                                        <h4>Check video presentation to find   out more about us .</h4>
+                                        <span class="section-separator fl-sec-sep"></span>
+                                    </div>
+                                    <p>{{service.description||'Branding logo'}} </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- END :: GALLERY ITEM -->                                                                                                               
+                </div>
+            </div>
+        </section>
+        <!-- END :: WHAT WE OFFER -->
+                           
+        <!-- BEGIN :: POPUP BLOCK -->
+        <section class="parallax-section video" data-scrollax-parent="true">
+            <img class="bg par-elem "  [src]="bannerImage||'../assets/images/bg/11.jpg'" data-scrollax="properties: { translateY: '30%' }"/>
+            <div class="overlay op7"></div>
+            <!--container-->
+            <div class="container">
+                <div class="video_section-title fl-wrap">
+                    <h2> Let’s PLAN YOUR BUDGET </h2>
+                </div>
+                <a href="javascript:void(0);" class="promo-link big_prom modal-open"><i class="fal fa-play"></i><span> Get a Quote </span></a>
+            </div>
+        </section>
+        <!-- END :: POPUP BLOCK -->  
+
+        <!-- BEGIN :: OUR FEATURE -->
+        <section class="features-block">
+            <div class="container-fluid p0">
+                <div class="section-title center-align">
+                    <h2><span> Our Features </span></h2>
+                    <span class="section-separator"></span>
+                    <p> {{basicInfo.description2||'Our features'}} </p>
+                </div>
+                <div class="grid-features col-sm-12">
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> In-house Designers </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Bespoke Approach </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Compatible Design </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Easy Boost </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                </div>
+            </div>
+        </section>
+        <!-- END :: OUR FEATURE -->
+
+        <!-- BEGIN :: HOW WE BUILD -->
+        <section data-scrollax-parent="true">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How we build your product</h2>
+                    <div class="section-subtitle">Discover &amp; Connect </div>
+                    <span class="section-separator"></span>
+                    <p>Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.</p>
+                </div>
+                <div class="process-wrap fl-wrap">
+                    <div class="col-sm-12 col-md-4">
+                        <div class="process-item">
+                            <span class="process-count">01 </span>
+                            <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h4> Empathize </h4>
+                            <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-4">
+                        <div class="process-item">
+                            <span class="process-count">02 </span>
+                            <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h4> Define </h4>
+                            <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="process-item">
+                            <span class="process-count">03 </span>
+                            <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h4> Ideate </h4>
+                            <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="process-item">
+                            <span class="process-count">04 </span>
+                            <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h4> Prototype </h4>
+                            <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="process-item">
+                            <span class="process-count">05 </span>
+                            <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h4> Test </h4>
+                            <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus ut, convallis eros sollicitudin turpis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END :: HOW WE BUILD -->
+
+        <app-technologies></app-technologies>
+    </div>
+</div>
+<!-- END :: WARPPER -->
+
+<app-footer></app-footer>

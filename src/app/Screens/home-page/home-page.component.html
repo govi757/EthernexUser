@@ -1,0 +1,401 @@
+<!-- <div class="loader-wrap">
+  <div class="loader-inner">
+      <div class="loader-inner-cirle"></div>
+  </div>
+</div> -->
+<app-header></app-header>
+<!-- BEGIN :: WARPPER -->
+<div id="wrapper">
+    <div class="content">
+        <!-- BEGIN :: SLIDER -->
+        <!-- <div style="width: 100%;"> -->
+        <!-- <app-carousel></app-carousel> -->
+        <!-- </div> -->
+        <div class="hero-slider_wrap fl-wrap">
+            <div class="hero-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+
+                        <!--hero-slider-item-->
+
+                        <div class="swiper-slide" *ngIf="carouselList.length==0">
+                                <div class="hero-slider-item fl-wrap">
+                                    <div class="bg-tabs-wrap">
+                                        <img class="bg"  [src]="'../assets/images/all/55.jpg'"/>
+                                        <div class="overlay op7"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="swiper-slide" *ngFor="let img of carouselList">
+                            <div class="hero-slider-item fl-wrap">
+                                <div class="bg-tabs-wrap">
+                                    <img class="bg" [src]="img.imageUrl" />
+                                    <div class="overlay op7"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--hero-slider-item end-->
+                        <!--hero-slider-item-->
+                        <!-- <div class="swiper-slide">
+                                <div class="hero-slider-item fl-wrap">
+                                    <div class="bg-tabs-wrap">
+                                        <div class="bg"  data-bg="../assets/images/bg/7.jpg"></div>
+                                        <div class="overlay op7"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <!--hero-slider-item end-->
+                        <!--hero-slider-item-->
+                        <!-- <div class="swiper-slide">
+                                <div class="hero-slider-item fl-wrap">
+                                    <div class="bg-tabs-wrap">
+                                        <div class="bg"  data-bg="../assets/images/bg/5.jpg"></div>
+                                        <div class="overlay op7"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <!--hero-slider-item end-->
+                    </div>
+                </div>
+            </div>
+            <div class="listing-carousel_pagination hero_pagination">
+                <div class="listing-carousel_pagination-wrap"></div>
+            </div>
+            <div class="slider-hero-button-prev shb color2-bg"><i class="fas fa-caret-left"></i></div>
+            <div class="slider-hero-button-next shb color2-bg"><i class="fas fa-caret-right"></i></div>
+        </div>
+        <!-- END :: SLIDER -->
+
+        <!-- BEGIN :: SERVICES -->
+        <section class="gray-bg hidden-section particles-wrapper">
+            <div class="container big-container">
+                <div class="section-title">
+                    <h2> OUR SERVICES </h2>
+                    <div class="section-subtitle"> Anamalous Services </div>
+                    <span class="section-separator"></span>
+                    <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus.</p>
+                </div>
+                <div class="listing-item-grid_container fl-wrap">
+                    <div class="row">
+                        <!-- BEGIN :: LISTING ITEM GRID -->
+                        <div class="col-sm-4" *ngFor="let service of serviceList">
+                            <div class="listing-item-grid" (click)="openService(service)">
+                                <img class="bg" [src]="service.imageUrl" />
+                                <div class="d-gr-sec"></div>
+
+                                <div class="listing-item-grid_title">
+                                    <h3><a style="cursor: pointer;" (click)="openService(service)"> {{service.title}} </a></h3>
+                                    <p style="padding:10px !important;word-wrap: break-word;">{{service.description |  slice:0:70}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END :: LISTING ITEM GRID -->
+
+
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+        <!-- END :: SERVICES -->
+        <section class="gray-bg hidden-section particles-wrapper">
+            <div class="container big-container">
+        <div class="about-wrap">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-single-main-media fl-wrap"
+                        style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                        <img src="../assets/images/all/55.jpg" class="respimg" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="ab_text">
+                        <div class="ab_text-title fl-wrap">
+                            <h3> WE INSPIRE TO CREATE A <br> BETTER TOMORROW</h3>
+                            <span class="section-separator fl-sec-sep"></span>
+                        </div>
+                        <p>{{basicInfo.description1||'Wezen Cloud Technologies is a full service IT Company
+                            located in UAE. Formed by a group of highly skilled self-motivated professionals;
+                            who believe that innovation and cost efficiencies are key drivers that accelerate
+                            digital revolution. Our team actively contributes in the digital revolution of the
+                            future by working closely with clients and offering them state of art solutions.' }}
+                        </p>
+                        <a (click)="openPage('overview')" style="cursor: pointer;color: white;"
+                            class="btn color2-bg float-btn custom-scroll-link"> More about wezen <i
+                                class="fal fa-users"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+
+        <!-- BEGIN :: WHY CHOOSE US -->
+        <section data-scrollax-parent="true">
+            <div class="container-fluid">
+                <div class="section-title">
+                    <h2> WHY CHOOSE US </h2>
+                    <div class="section-subtitle">Discover &amp; Connect </div>
+                    <span class="section-separator"></span>
+                    <p>{{basicInfo.description2}}</p>
+                </div>
+                <div class="process-wrap fl-wrap">
+                    <ul class="no-list-style">
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">01 </span>
+                                <div class="time-line-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <h4> High Performance </h4>
+                                <p>Proin dapibus nisl ornare diam varius tempus. Aenean a quam luctus, finibus tellus
+                                    ut, convallis eros sollicitudin turpis.</p>
+                            </div>
+                            <span class="pr-dec"></span>
+                        </li>
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">02</span>
+                                <div class="time-line-icon"><i class="fal fa-mail-bulk"></i></div>
+                                <h4> Visibility </h4>
+                                <p>Faucibus ante, in porttitor tellus blandit et. Phasellus tincidunt metus lectus
+                                    sollicitudin feugiat pharetra consectetur.</p>
+                            </div>
+                            <span class="pr-dec"></span>
+                        </li>
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">03</span>
+                                <div class="time-line-icon"><i class="fal fa-layer-plus"></i></div>
+                                <h4> User Experience </h4>
+                                <p>Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla, id
+                                    vestibulum metus nullam viverra porta.</p>
+                            </div>
+                            <span class="pr-dec"></span>
+                        </li>
+                        <li>
+                            <div class="process-item">
+                                <span class="process-count">04</span>
+                                <div class="time-line-icon"><i class="fal fa-briefcase"></i></div>
+                                <h4> Cost Efficiencies </h4>
+                                <p>Maecenas pulvinar, risus in facilisis dignissim, quam nisi hendrerit nulla, id
+                                    vestibulum metus nullam viverra porta.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- END :: WHY CHOOSE US -->
+
+        <!-- BEGIN :: VIDEO BLOCK -->
+        <section class="parallax-section video" data-scrollax-parent="true">
+            <img class="bg par-elem " [src]="bannerImage||'../assets/images/bg/11.jpg'"
+                data-scrollax="properties: { translateY: '30%' }" />
+            <div class="overlay op7"></div>
+            <!--container-->
+            <div class="container">
+                <div class="video_section-title fl-wrap">
+                    <h4> Experiences as Live </h4>
+                    <h2>Get ready to start your exciting journey. <br> Our agency will lead you through the amazing
+                        digital world</h2>
+                </div>
+                <a href="https://vimeo.com/70851162" class="promo-link big_prom image-popup"><i
+                        class="fal fa-play"></i><span> Play Video</span></a>
+            </div>
+        </section>
+        <!-- END :: VIDEO BLOCK -->
+
+        <!-- BEGIN :: WE OFFER -->
+        <section class="slw-sec" id="sec1">
+            <div class="section-title">
+                <h2> INDUSTRIES WE SERVE </h2>
+                <div class="section-subtitle"> We provide best service </div>
+                <span class="section-separator"></span>
+                <p>{{basicInfo.description3||'We understand the importance of IT among industries in this digital
+                    era.'}}</p>
+            </div>
+
+            <div class="listing-slider-wrap fl-wrap">
+                <div class="listing-slider fl-wrap">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- BEGIN :: SWIPER SLIDE -->
+                            <div class="swiper-slide" *ngFor="let industry of industriesList">
+                                <div class="listing-slider-item fl-wrap">
+                                    <div class="listing-item listing_carditem">
+                                        <article class="geodir-category-listing fl-wrap">
+                                            <div class="geodir-category-img">
+                                                <a href="#" class="geodir-category-img-wrap fl-wrap">
+                                                    <img [src]="industry.imageUrl||'../assets/images/all/48.jpg'"
+                                                        alt="">
+                                                </a>
+                                                <div class="geodir-category-opt">
+                                                    <div class="geodir-category-opt_title">
+                                                        <h4><a href="#"> {{industry.title||'industry'}} </a></h4>
+                                                        <div class="geodir-category-location">
+                                                            <a href="#">
+                                                                {{industry.description||'Serving more than 25
+                                                                restaurants now.'}}
+                                                            </a>
+                                                        </div>
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BEGIN :: SWIPER SLIDE -->
+
+                            <!-- BEGIN :: SWIPER SLIDE -->
+                            <!-- <div class="swiper-slide">
+                                    <div class="listing-slider-item fl-wrap">
+                                        <div class="listing-item listing_carditem">
+                                            <article class="geodir-category-listing fl-wrap">
+                                                <div class="geodir-category-img">
+                                                    <a href="#" class="geodir-category-img-wrap fl-wrap">
+                                                        <img src="../assets/images/all/25.jpg" alt=""/> 
+                                                    </a>
+                                                    <div class="geodir-category-opt">
+                                                        <div class="geodir-category-opt_title">
+                                                            <h4><a href="#"> Schools and Universities </a></h4>
+                                                            <div class="geodir-category-location">
+                                                                <a href="#">
+                                                                    Serving more than 25 restaurants now.
+                                                                </a>
+                                                            </div>
+                                                            <br><br>                                                                    
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                            </article>
+                                        </div>                                                   
+                                    </div>
+                                </div> -->
+                            <!-- BEGIN :: SWIPER SLIDE -->
+
+                            <!-- BEGIN :: SWIPER SLIDE -->
+                            <!-- <div class="swiper-slide">
+                                    <div class="listing-slider-item fl-wrap">
+                                        <div class="listing-item listing_carditem">
+                                            <article class="geodir-category-listing fl-wrap">
+                                                <div class="geodir-category-img">
+                                                    <a href="#" class="geodir-category-img-wrap fl-wrap">
+                                                        <img src="../assets/images/all/42.jpg" alt=""> 
+                                                    </a>
+  
+                                                    <div class="geodir-category-opt">
+                                                        <div class="geodir-category-opt_title">
+                                                            <h4><a href="#"> Hospitals </a></h4>
+                                                            <div class="geodir-category-location">
+                                                                <a href="#">
+                                                                    Serving more than 25 restaurants now.
+                                                                </a>
+                                                            </div>
+                                                            <br><br>                                                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>                                                   
+                                    </div>
+                                </div> -->
+                            <!-- BEGIN :: SWIPER SLIDE -->
+
+                            <!-- BEGIN :: SWIPER SLIDE -->
+                            <!-- <div class="swiper-slide">
+                                    <div class="listing-slider-item fl-wrap">
+                                        <div class="listing-item listing_carditem">
+                                            <article class="geodir-category-listing fl-wrap">
+                                                <div class="geodir-category-img">
+                                                    <a href="#" class="geodir-category-img-wrap fl-wrap">
+                                                        <img src="../assets/images/all/29.jpg" alt=""> 
+                                                    </a>
+                                                    <div class="geodir-category-opt">
+                                                        <div class="geodir-category-opt_title">
+                                                            <h4><a href="#"> Real Estates </a></h4>
+                                                            <div class="geodir-category-location">
+                                                                <a href="#">
+                                                                    Serving more than 25 restaurants now.
+                                                                </a>
+                                                            </div>
+                                                            <br><br>                                                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>                                                   
+                                    </div>
+                                </div> -->
+                            <!-- BEGIN :: SWIPER SLIDE -->
+                        </div>
+                    </div>
+
+                    <div class="listing-carousel-button listing-carousel-button-next2"><i
+                            class="fas fa-caret-right"></i></div>
+                    <div class="listing-carousel-button listing-carousel-button-prev2"><i class="fas fa-caret-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END :: WE OFFER -->
+
+        <!-- BEGIN :: OUR CLIENTS -->
+        <section class="gray-bg">
+            <div class="container">
+                <div class="clients-carousel-wrap fl-wrap">
+                    <div class="cc-btn   cc-prev"><i class="fal fa-angle-left"></i></div>
+                    <div class="cc-btn cc-next"><i class="fal fa-angle-right"></i></div>
+                    <div class="clients-carousel">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/2.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/3.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/1.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/2.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                                <!--client-item-->
+                                <div class="swiper-slide">
+                                    <a class="client-item"><img src="../assets/images/clients/3.png"
+                                            alt=""></a>
+                                </div>
+                                <!--client-item end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END :: OUR CLIENTS -->
+    </div>
+</div>
+<!-- END :: WARPPER -->
+<app-footer></app-footer>

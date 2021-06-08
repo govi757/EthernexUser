@@ -1,0 +1,185 @@
+ <app-header></app-header>
+ 
+ <!-- BEGIN :: WARPPER -->
+ <div id="wrapper">
+    <div class="content">
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <img class="bg par-elem" [src]="basicInfo.imageUrl||'../assets/images/all/48.jpg'" data-scrollax="properties: { translateY: '30%' }"/>
+            <div class="overlay op7"></div>
+            <div class="container">
+                <div class="section-title center-align big-title">
+                    <h2><span> {{basicInfo.title||'WE ARE'}} </span></h2>
+                    <span class="section-separator"></span>
+                    <p> {{basicInfo.description||'YOUR PARTNER IN DIGITAL REVOLUTION'}} </p>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="javascript:void(0);" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>  
+            </div>
+        </section>
+        
+        <!-- BEGIN :: MISSION VISION -->
+        <section id="sec1" class="xs-pad0" data-scrollax-parent="true">
+            <div class="container">
+                <!--about-wrap -->
+                <div class="about-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ab_text">
+                                <div class="ab_text-title fl-wrap">
+                                    <h3>Our <span> Mission </span></h3>
+                                    <h4>Check video presentation to find   out more about us .</h4>
+                                    <span class="section-separator fl-sec-sep"></span>
+                                </div>
+                                <div class="visible-sm visbile-xs list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                    <img [src]="ourMissionImage" class="respimg" alt="">
+                                </div>
+                                <p>{{basicInfo.description1||'To inspire and create a better tomorrow for all by accelerating global transition to the new digital world.'}} </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 hidden-sm hidden-xs">
+                            <div class="list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                <img [src]="ourMissionImage||'../assets/images/all/55.jpg'" class="respimg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="sec1" class="xs-pad0" data-scrollax-parent="true">
+            <div class="container">
+                <!--about-wrap -->
+                <div class="about-wrap">
+                    <div class="row">
+                        <div class="col-md-6 hidden-xs hidden-sm">
+                            <div class="list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                <img [src]="ourVissionImage||'../assets/images/all/55.jpg'" class="respimg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab_text">
+                                <div class="ab_text-title fl-wrap">
+                                    <h3>Our <span> Vision </span></h3>
+                                    <h4>Check video presentation to find   out more about us .</h4>
+                                    <span class="section-separator fl-sec-sep"></span>
+                                </div>
+                                <div class="visible-sm visbile-xs list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                                    <img [src]="ourVissionImage||'../assets/images/all/55.jpg'" class="respimg" alt="">
+                                </div>
+                                <p>{{basicInfo.description2||'Continually endeavor to update technical knowledge and expertise on all leading technologies to facilitate offering of products and services that fulfill all present and future needs of clients.'}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END :: MISSION VISION -->
+
+        <!-- BEGIN :: INFO -->
+        <section class="parallax-section video-section" data-scrollax-parent="true" id="sec2">
+            <img class="bg par-elem "  [src]="bannerImage||'../assets/images/bg/34.jpg'" data-scrollax="properties: { translateY: '30%' }"/>
+            <div class="overlay op7"></div>
+            <!--container-->
+            <div class="container">
+                <div class="video_section-title fl-wrap">
+                    <h2> 
+                        “Great things in business are never done by one person. They’re
+                        done by a team of people.” 
+                    </h2>
+                    <p class="leads"> 
+                        {{basicInfo.description3||'A group of young like-minded professionals who had a clear understanding of the struggles faced by Small & Medium businesses (SME’s) in a changing digital world under the grip of an ongoing ‘COVID 19’ pandemic; and having a keen desire to help them establish and grow their businesses through an online/ digital presence came together to form this company in 2021.'}} 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- END :: INFO -->
+
+        <!-- BEGIN :: TEAM -->
+        <section id="sec3">
+            <div class="container">
+                <div class="section-title">
+                    <h2> Our Team</h2>
+                    <div class="section-subtitle">the crew</div>
+                    <span class="section-separator"></span>
+                    <p>Explore some of the best tips from around the city from our partners and friends.</p>
+                </div>
+                <div class="about-wrap team-box2 fl-wrap">
+                    <!-- BEGIN :: TEAM ITEM -->
+                    <div class="team-box" *ngFor="let teamMember of teamMembersList">
+                        <div class="team-info fl-wrap">
+                            <h3> {{teamMember.name}} </h3>
+                            <p class="designation"> {{teamMember.role}} </p>
+                        </div>
+                    </div>
+                    <!-- END :: TEAM ITEM -->
+
+                </div>
+            </div>					
+        </section>
+        <!-- END :: TEAM -->
+
+        <!-- BEGIN :: OUR VALUES -->
+        <section class="gray-bg particles-wrapper">
+            <div class="container-fluid">
+                <div class="section-title">
+                    <h2> Our Values </h2>
+                    <div class="section-subtitle">How we work</div>
+                    <span class="section-separator"></span>
+                </div>
+                <div class="grid-features grid-6 col-sm-12 col-xs-12">
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> In-House team </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Problem Solvers </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Time-Bound Professionals </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Flexibility </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Transparency </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                    
+                    <!-- BEGIN :: FEATURE BOX -->
+                    <div class="feature-box">
+                        <div class="info">
+                            <h2> Easy Communication </h2>
+                        </div>
+                    </div>
+                    <!-- END :: FEATURE BOX -->
+                </div>
+            </div>
+        </section>
+        <!-- END :: OUR VALUES -->
+    </div>
+</div>
+<!-- END :: WARPPER -->
+<app-footer></app-footer>

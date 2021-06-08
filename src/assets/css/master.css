@@ -1,0 +1,185 @@
+.c-masonry__item {
+  width: 50%;
+  padding: 0.5rem;
+  position: relative;
+}
+.c-masonry__download {
+  position: absolute;
+  color: #1f1f1f;
+  border-radius: 0.125rem;
+  z-index: 20;
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+}
+.c-masonry__download img {
+  width: 24px;
+}
+.c-masonry__download:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.c-masonry__block:active .c-masonry__img {
+  -webkit-box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.36);
+  box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.36);
+}
+.c-masonry__img {
+  width: 100%;
+  display: block;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+  -webkit-box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.48);
+  box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.48);
+}
+@media (min-width: 768px) {
+  .c-masonry__item {
+    width: 33.33333%;
+  }
+}
+.c-seperator {
+  display: block;
+  background-color: #ccc;
+  width: 100%;
+  height: 1px;
+}
+.c-flipster {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.c-flipster__link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  outline: 0;
+  text-decoration: none;
+  padding: 1rem;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.c-flipster__link:active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.c-flipster__img-block {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.c-flipster__item {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.c-flipster img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: none;
+}
+.c-flipster__caption {
+  width: 100%;
+  color: #fff;
+  font-family: Metropolis, system-ui, BlinkMacSystemFont, -apple-system,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-size: 0.875rem;
+  word-spacing: normal;
+}
+.c-flipster__playicon {
+  position: absolute;
+  border-radius: 9999px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.875rem;
+  top: 50%;
+  right: 0.5rem;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  line-height: 1;
+  border: 1px solid #fff;
+}
+.c-flipster__playicon::before {
+  position: relative;
+  top: 5px;
+  left: 1px;
+}
+@media (min-width: 768px) {
+  .c-flipster__link:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .c-flipster__img-block {
+    width: 400px;
+    height: 250px;
+  }
+  .c-flipster__item {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media (min-width: 1200px) {
+  .c-flipster__img-block {
+    width: 500px;
+    height: 300px;
+  }
+  .c-flipster__item {
+    width: 500px;
+    height: 300px;
+  }
+}
+.flipster__button {
+  z-index: 20;
+}
+.c-side-nav {
+  display: none;
+}
+.c-side-nav ul {
+  list-style: none;
+  padding: 0;
+}
+.c-side-nav ul li {
+  margin-bottom: 2rem;
+}
+.c-side-nav ul li a {
+  display: block;
+  font-family: Metropolis, system-ui, BlinkMacSystemFont, -apple-system,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #525252;
+}
+@media (min-width: 768px) {
+  .c-side-nav {
+    display: block;
+  }
+}
+.s-destination-about {
+  position: relative;
+}
+.s-destination-about:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #f4ecd0;
+  opacity: 0.9;
+}

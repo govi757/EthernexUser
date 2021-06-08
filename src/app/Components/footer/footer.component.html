@@ -1,0 +1,112 @@
+ <!-- BEGIN :: FOOTER -->
+ <footer class="main-footer fl-wrap">
+    <!-- footer-header-->
+    <div class="footer-header fl-wrap grad ient-dark">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div  class="subscribe-header">
+                        <h3>Subscribe For a <span>Newsletter</span></h3>
+                        <p>Whant to be notified about new locations ?  Just sign up.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="subscribe-widget">
+                        <div class="subcribe-form">
+                            <form id="subscribe">
+                                <input [(ngModel)]="subscriberBody.name" type="text" class="enteremail fl-wrap" name="name" id="" placeholder="Your name">
+                                <input [(ngModel)]="subscriberBody.email" class="enteremail fl-wrap" name="email" id="subscribe-email" placeholder="Enter Your Email" spellcheck="false" type="text">
+                                <input [(ngModel)]="subscriberBody.phoneNumber" type="number" class="enteremail fl-wrap" name="name" id="" placeholder="Phone Number">
+                                <button (click)="addSubscriber()" type="submit" id="subscribe-button" class="subscribe-button"><i class="fal fa-envelope"></i></button>
+                                <label for="subscribe-email" class="subscribe-message"></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-header end-->
+    <!--footer-inner-->
+    <div class="footer-inner   fl-wrap">
+        <div class="container">
+            <div class="row">
+                <!-- footer-widget-->
+                <div class="col-md-4">
+                    <div class="footer-widget fl-wrap">
+                        <div class="footer-logo"><a href="index.html"><img src="../assets/images/logo.png" alt=""></a></div>
+                        <div class="footer-contacts-widget fl-wrap">
+                            <p>
+                                In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus. Nulla eu mi magna. Etiam suscipit commodo gravida.   
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur recusandae architecto at.
+                            </p>
+                            <div class="footer-social">
+                                <span>Find  us on: </span>
+                                <ul class="no-list-style">
+                                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-vk"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-widget fl-wrap">
+                        <h3> Explore </h3>
+                        <ul  class="fl-wrap no-list-style footer-list">
+                            <li> <a (click)="navigationClicked('/ethernex/overview')"> About </a> </li>
+                            <li> <a (click)="navigationClicked('/ethernex/designService')"> Services </a> </li>
+                            <li> <a (click)="navigationClicked('/ethernex/portfolio')"> Portfolio </a> </li>
+                            <!-- <li> <a href="#"> Blogs </a> </li> -->
+                            <li> <a (click)="navigationClicked('/ethernex/faq')"> FAQ </a> </li>
+                            <li> <a (click)="navigationClicked('/ethernex/contactus')"> Contact Us </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-widget fl-wrap">
+                        <h3> Contact </h3>
+                        <ul  class="footer-contacts fl-wrap no-list-style">
+                                <li> <span><i class="fal fa-map-marker"></i> </span><a href="javascript:void(0)">#34, Merku Andal Street, West Chinthamani, Opp. to IOB Bank, Chennai-620 001. </a></li>
+                            <li><span><i class="fal fa-envelope"></i> </span><a href="#">yourmail@domain.com</a></li>
+                            <li><span><i class="fal fa-phone"></i> </span><a href="#">+91 908 987 8765 </a></li>
+                            <li><span><i class="fal fa-globe"></i> </span><a href="#"> www.wezen.com </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer bg-->
+        <div class="footer-bg" data-ran="4"></div>
+        <div class="footer-wave">
+            <svg viewbox="0 0 100 25">
+                <path fill="#fff" d="M0 30 V12 Q30 17 55 12 T100 11 V30z" />
+            </svg>
+        </div>
+        <!-- footer bg  end-->
+    </div>
+    <!--footer-inner end -->
+    <!--sub-footer-->
+    <div class="sub-footer  fl-wrap">
+        <div class="container">
+            <div class="copyright"> &#169; Wezen 2021. All rights reserved.</div>
+            
+            <div class="subfooter-nav">
+                <ul class="no-list-style">
+                    <li><a href="#">Terms of use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--sub-footer end -->
+  </footer>
+  <!-- END :: FOOTER -->
+
+  

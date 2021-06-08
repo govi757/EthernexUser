@@ -1,0 +1,234 @@
+<app-header></app-header>
+<!-- BEGIN :: WARPPER -->
+<div id="wrapper">
+    <div class="content">
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <div class="bg par-elem" data-bg="../assets/images/bg/11.jpg"
+                data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay op7"></div>
+            <div class="container">
+                <div class="section-title center-align big-title">
+                    <h2><span> JOIN US </span></h2>
+                    <span class="section-separator"></span>
+                    <p> JOIN US IN DIGITAL REVOLUTION </p>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="javascript:void(0);" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>
+            </div>
+        </section>
+
+        <section id="sec1" data-scrollax-parent="true">
+            <div class="container">
+                <!--about-wrap -->
+                <div class="about-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ab_text">
+                                <div class="ab_text-title fl-wrap">
+                                    <h3>Drop us a line</h3>
+                                    <span class="section-separator fl-sec-sep"></span>
+                                </div>
+                                <div id="contact-form">
+                                    <div id="message"></div>
+                                    <div class="custom-form"
+                                        name="contactform" id="contactform">
+                                        <fieldset>
+                                            <label><i class="fal fa-user"></i></label>
+                                            <input [(ngModel)]="scheduleMeetingBody.name" type="text" name="name" id="name" placeholder="Your Name *"
+                                                value="" />
+                                            <div class="clearfix"></div>
+
+                                            <label><i class="fal fa-envelope"></i> </label>
+                                            <input [(ngModel)]="scheduleMeetingBody.email" type="text" name="email" id="email" placeholder="Email Address*"
+                                                value="" />
+
+                                            <label><i class="fal fa-phone"></i> </label>
+                                            <input [(ngModel)]="scheduleMeetingBody.phoneNumber" type="text" name="phone" id="phone" placeholder="Phone*" value="" />
+
+                                            <textarea [(ngModel)]="scheduleMeetingBody.message" name="comments" id="comments" cols="40" rows="3"
+                                                placeholder="Your Message:"></textarea>
+
+                                            <div class="materialize-checkbox col-sm-12 col-xs-12">
+                                                <input [(ngModel)]="subscribe" type="checkbox" id="agreement">
+                                                <label for="agreement">
+                                                    &nbsp;&nbsp;
+                                                    I have agree to subscribe to newsletter.
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                        <button (click)="sendMessage()" [disabled]="!isValid()" class="btn float-btn color2-bg" id="submit">Send Message<i
+                                                class="fal fa-paper-plane"></i></button>
+                                        &nbsp;&nbsp;
+
+                                        <button [disabled]="!isValid()" (click)="openModal()" class="btn float-btn color2-bg" data-toggle="modal" data-target="#exampleModal"> Schedule Meeting <i
+                                                class="fal fa-user"></i></button>
+
+                                        <div class="col-sm-12 col-xs-12 info-box">
+                                            <br>
+                                            <p> <span> * </span> Sends message and info to info@wezen.ae </p>
+                                            <p> <span> * </span> Opens calendar to schedule date/time for meeting and
+                                                sends info to info@wezen.ae and customer email </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- contact form  end-->
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="ab_text-title fl-wrap">
+                                <h3>Get in Touch</h3>
+                                <span class="section-separator fl-sec-sep"></span>
+                            </div>
+                            <!--box-widget-item -->
+                            <div class="box-widget-item fl-wrap block_box">
+                                <div class="box-widget">
+                                    <div class="box-widget-content bwc-nopad">
+                                        <div class="list-author-widget-contacts list-item-widget-contacts bwc-padside">
+                                            <ul class="no-list-style">
+                                                <li><span><i class="fal fa-map-marker"></i> Adress :</span> <a
+                                                        href="#singleMap" class="custom-scroll-link"> {{companyInfo.address}} </a>
+                                                </li>
+                                                <li><span><i class="fal fa-phone"></i> Phone :</span> <a href="#">+91
+                                                    {{companyInfo.phoneNumber}} </a></li>
+                                                <li><span><i class="fal fa-envelope"></i> Mail :</span> <a href="#">
+                                                    {{companyInfo.emailId}}</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125406.03748906677!2d78.6189867358286!3d10.816005379096653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50ff2aecdad%3A0x6de02c3bedbbaea6!2sTiruchirappalli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1614938034841!5m2!1sen!2sin"
+                                            class="iframe-contact" frameborder="0"></iframe>
+                                        <div class="list-widget-social bottom-bcw-box  fl-wrap">
+                                            <ul class="no-list-style center-socials" style="cursor: pointer;color: #fff;">
+                                                <!-- <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li> -->
+                                                <li><a (click)="openPhone('dialpad')" target="_blank"><i class="fal fa-mobile"></i></a></li>
+                                                <li><a (click)="openPhone('email')" target="_blank"><i class="fal fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--box-widget-item end -->
+                        </div>
+
+                        <div class="col-sm-12">
+                            <br>
+                            <div class="ab_text-title fl-wrap">
+                                <h3> Connect with us </h3>
+                                <span class="section-separator fl-sec-sep"></span>
+                            </div>
+                            <div class="list-widget-social bottom-bcw-box  fl-wrap">
+                                <ul class="no-list-style" style="cursor: pointer;color: #fff;">
+                                    <li><a (click)="openPage('facebookUrl')" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a (click)="openPage('linkedinUrl')" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a (click)="openPage('instaUrl')" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a (click)="openPage('twitterUrl')" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <!-- <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li> -->
+                                    <li><a (click)="openPage('youtubeUrl')" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- about-wrap end  -->
+            </div>
+        </section>
+    </div>
+</div>
+<!-- END :: WARPPER -->
+<!-- <div style="position: fixed;z-index: 9999;width:100%;height: 100vh;">
+    <div style="position: fixed;width:100%;height: 100vh;background-color: black;opacity: 0.6;">
+    </div>
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="card my-5" style="z-index: 999;width: 50%;">
+            <div class="card-title">
+                Select Date
+            </div>
+            <div class="row container" > 
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker style="z-index: 999;" #picker></mat-datepicker>
+            </div>
+            
+        </div>
+    </div>
+</div> -->
+<!-- Button trigger modal -->
+<button type="button" style="display: none;" id="scheduleModalButton" class="btn" data-toggle="modal" data-target="#scheduleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <!-- <div *ngIf="showScheduleModal" class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5>Schedule Your meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="col-sm-12" style="text-align: left;">
+                        <label style="text-align: left;">Choose your date and time</label>
+                        <input [(ngModel)]="scheduleMeetingBody.dateTime" style="flex:1" class="form-control" type="datetime-local"  placeholder="Choose a date">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn float-btn" data-dismiss="modal">Close</button>
+          <button (click)="scheduleMeetingPressed()" type="button" class="btn float-btn color2-bg">Schedule meeting<i
+            class="fal fa-user"></i></button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="wezenModal" *ngIf="showScheduleModal">
+    <div (click)="closeModal()"
+    style="position: fixed;width: 100%;height: 100vh;background-color: #000;top:0;left:0;z-index: 9;opacity: 0.3;">
+</div>
+<div class="modal-dialog" role="document" style="z-index: 999;">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5>Schedule Your meeting</h5>
+        <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="col-sm-12" style="text-align: left;">
+                      <label style="text-align: left;">Choose your date and time</label>
+                      <input [(ngModel)]="scheduleMeetingBody.dateTime" style="flex:1" class="form-control" type="datetime-local"  placeholder="Choose a date">
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn float-btn" data-dismiss="modal">Close</button>
+        <button (click)="scheduleMeetingPressed()" type="button" class="btn float-btn color2-bg">Schedule meeting<i
+          class="fal fa-user"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-body">
+        <div class="col-sm-12">
+            <div class="row" > 
+                <h3>Schedule Your meeting</h3>
+                <div style="display: flex;flex-direction: row;width: 100%;">
+                    <input style="flex:1" class="form-control" type="datetime-local"  placeholder="Choose a date">
+                </div>
+                
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <app-footer></app-footer>

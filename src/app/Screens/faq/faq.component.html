@@ -1,0 +1,110 @@
+ <app-header></app-header>
+ <!-- BEGIN :: WARPPER -->
+ <div id="wrapper">
+    <div class="content">
+        <section class="parallax-section single-par" data-scrollax-parent="true">
+            <div class="bg par-elem" data-bg="../assets/images/bg/11.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+            <div class="overlay op7"></div>
+            <div class="container">
+                <div class="section-title center-align big-title">
+                    <h2><span> {{basicInfo.title}} </span></h2>
+                    <span class="section-separator"></span>
+                    <p>{{basicInfo.description}} </p>
+                </div>
+            </div>
+            <div class="header-sec-link">
+                <a href="javascript:void(0);" class="custom-scroll-link"><i class="fal fa-angle-double-down"></i></a>  
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2> FAQ</h2>
+                    <div class="section-subtitle">Popular Questions</div>
+                    <span class="section-separator"></span>
+                </div>
+                <div class="post-container fl-wrap">
+                    <div class="row">
+                        <!-- blog sidebar -->
+                        <div class="col-md-12">
+                            <!-- faq-section -->
+                            <div class="faq-title faq-title_first fl-wrap">Getting Started</div>
+                            <div class="faq-section fl-wrap" id="fq1">
+                                <!-- accordion-->
+                                <div class="accordion">
+                                    <div *ngFor="let item of gettingStartedFaqs">
+                                    <a (click)="accordionClicked(item)" class="toggle " [ngClass]="{'active-accordion act-accordion': selectedAccordion === item._id}" >{{item.title}}<span></span></a>
+                                    <div class="accordion-inner " *ngIf="selectedAccordion === item._id">
+                                        <p>{{item.description}}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- accordion end -->                                               
+                            </div>
+                            <!-- faq-section end -->
+                            <!-- faq-section -->
+                            <div class="faq-title fl-wrap">Pricing Plans</div>
+                            <div class="faq-section fl-wrap" id="fq1">
+                                <!-- accordion-->
+                                <div class="accordion">
+                                    <div *ngFor="let item of pricingPlansFaqs">
+                                    <a (click)="accordionClicked(item)" class="toggle " [ngClass]="{'active-accordion act-accordion': selectedAccordion === item._id}" >{{item.title}}<span></span></a>
+                                    <div class=" accordion-inner" *ngIf="selectedAccordion === item._id">
+                                        <p>{{item.description}}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- accordion end -->                                               
+                            </div>
+                            <!-- faq-section end -->
+                            <!-- faq-section -->
+                            <div class="faq-title fl-wrap">Sales Questions</div>
+                            <div class="faq-section fl-wrap" id="fq1">
+                                <!-- accordion-->
+                                <div class="accordion">
+                                    <div *ngFor="let item of salesQuestionsFaqs">
+                                    <a (click)="accordionClicked(item)" class="toggle " [ngClass]="{'active-accordion act-accordion': selectedAccordion === item._id}" >{{item.title}}<span></span></a>
+                                    <div class="accordion-inner " *ngIf="selectedAccordion === item._id">
+                                        <p>{{item.description}}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- accordion end -->                                               
+                            </div>
+                            <!-- faq-section end -->
+                            <!-- faq-section -->
+                            <div class="faq-title fl-wrap">Usage Guides</div>
+                            <div class="faq-section fl-wrap" id="fq1">
+                                <!-- accordion-->
+                                <div class="accordion">
+                                    <div *ngFor="let item of userGuideFaqs">
+                                    <a (click)="accordionClicked(item)" class="toggle " [ngClass]="{'active-accordion act-accordion': selectedAccordion === item._id}" >{{item.title}}<span></span></a>
+                                    <div class="accordion-inner" [@faqAnim]="selectedAccordion === item._id ? 'open' : 'closed'"  >
+                                        <p>{{item.description}}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- accordion end -->                                               
+                            </div>
+                            <!-- faq-section end -->
+                            <div class="faq-links fl-wrap">
+                                <h3 class="faq-links-title">Still Need Help ?</h3>
+                                <span class="section-separator"></span>
+                                <!-- post nav --> 
+                                <div class="post-nav-wrap fl-wrap" style="cursor: pointer;">
+                                    <a (click)="openPage('dialpad')" class="post-nav post-nav-prev"><span class="post-nav-img"><img src="../assets/images/all/54.jpg" alt=""></span><span class="post-nav-text"><strong>Call us</strong> <br>{{companyInfo.phoneNumber}}</span></a> 
+                                    <a (click)="openPage('email')" class="post-nav post-nav-next"><span class="post-nav-img"><img src="../assets/images/all/53.jpg" alt=""></span><span class="post-nav-text"><strong>Write to us</strong><br>{{companyInfo.emailId}}</span></a> 
+                                </div>
+                                <!-- post nav end --> 
+                            </div>
+                        </div>
+                        <!-- blog sidebar end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- END :: WARPPER -->
+<app-footer></app-footer>

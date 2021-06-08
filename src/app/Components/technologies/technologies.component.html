@@ -1,0 +1,111 @@
+
+<!-- BEGIN :: TECHNOLOGIES WE USE -->
+<section data-scrollax-parent="true">
+    <div class="container">
+        <div class="section-title">
+            <h2> Technologies we use </h2>
+            <div class="section-subtitle">Discover &amp; Connect </div>
+            <span class="section-separator"></span>
+        </div>
+
+        <div class="clear">
+            <ul class="nav nav-tabs technologies_tabs" id="myTab" role="tablist">
+                <li class="nav-item" (click)="tabChange('mobile')">
+                  <a class="nav-link" [ngClass]="{'active': currentTab=='mobile'}"  data-toggle="tab" role="tab" aria-selected="true">
+                      Mobile Technologies
+                  </a>
+                </li>
+                <li class="nav-item" (click)="tabChange('web')">
+                  <a class="nav-link" [ngClass]="{'active': currentTab=='web'}" data-toggle="tab" role="tab" aria-selected="false">
+                    Web Technologies
+                  </a>
+                </li>
+                <li class="nav-item" (click)="tabChange('cloud')">
+                  <a class="nav-link" [ngClass]="{'active': currentTab=='cloud'}" data-toggle="tab" role="tab" aria-selected="false">
+                    Cloud
+                  </a>
+                </li>
+                <li class="nav-item" (click)="tabChange('db')">
+                  <a class="nav-link" [ngClass]="{'active': currentTab=='db'}" data-toggle="tab" role="tab" aria-selected="false">
+                    Database
+                  </a>
+                </li>
+                <li class="nav-item" (click)="tabChange('design')">
+                  <a class="nav-link" [ngClass]="{'active': currentTab=='design'}" data-toggle="tab" role="tab" aria-selected="false">
+                    Design
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                    <!-- BEGIN :: SERVICE #1 TAB -->
+                    <div class="tab-pane fade " [ngClass]="{'show': currentTab=='mobile'}" role="tabpanel">
+                        <ul class="technologies_icons d-flex align-items-center justify-content-center">
+                            <li><img class="lazy" title="" alt="Swift" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/swift.svg" style=""></li>
+                            <li><img class="lazy" title="Objective-C" alt="Objective-C" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/objactive-c.png" style=""></li>
+                            <li><img class="lazy" title="Java" alt="Java" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/java.svg" style=""></li>
+                            <li><img class="lazy" title="Flutter" alt="Flutter" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/flutter.png" style=""></li>
+                            <li><img class="lazy" title="Augmented reality Android" alt="Augmented reality Android" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/android-ar.png" style=""></li>
+                            <li><img class="lazy" title="Augmented reality Kit" alt="Augmented reality Kit" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/arkit.png" style=""></li>
+                            <li><img class="lazy" title="Unity" alt="Unity" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/unity.png" style=""></li>
+                            <li><img class="lazy" title="Google virtual reality" alt="Google virtual reality" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/google-vr.png" style=""></li>
+                            <li><img class="lazy" title="culus VR" alt="Oculus VR" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/oculus.svg" style=""></li>
+                            <li><img class="lazy" title="Mixed reality" alt="Mixed reality" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/mixed-reality.png" style=""></li>
+                        </ul>
+                    </div>
+                    <!-- END :: SERVICE #1 TAB -->
+
+                    <!-- BEGIN :: SERVICE #1 TAB -->
+                    <div class="tab-pane fade"  [ngClass]="{'show': currentTab=='web'}" role="tabpanel">
+                        <ul class="technologies_icons d-flex align-items-center justify-content-center">
+                            <li><img class="lazy" title="PHP" alt="PHP" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/php.svg" style=""></li>
+                            <li><img class="lazy" title="WordPress" alt="WordPress" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/wordpress.svg" style=""></li>
+                            <li><img class="lazy" title="CodeIgniter" alt="CodeIgniter" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/codeigniter.svg" style=""></li>
+                            <li><img class="lazy" title="Laravel" alt="Laravel" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/laravel.svg" style=""></li>
+                            <li><img class="lazy" title="Node.js" alt="Node.js" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/nodejs.svg" style=""></li>
+                            <li><img class="lazy" title="Angular" alt="Angular" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/angular.svg" style=""></li>
+                            <li><img class="lazy" title="HTML5" alt="HTML5" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/html5.svg" style=""></li>
+                            <li><img class="lazy" title="CSS3" alt="CSS3" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/css3.svg" style=""></li>
+                            <li><img class="lazy" title="jQuery" alt="jQuery" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/jquery.svg" style=""></li>
+                            <li><img class="lazy" title="Bootstrap 4" alt="Bootstrap 4" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/bootstrap-4.svg" style=""></li>
+                        </ul>
+                    </div>
+                    <!-- END :: SERVICE #1 TAB -->
+
+                    <!-- BEGIN :: SERVICE #1 TAB -->
+                    <div class="tab-pane fade"  [ngClass]="{'show': currentTab=='cloud'}" role="tabpanel">
+                        <ul class="technologies_icons d-flex align-items-center justify-content-center">
+                            <li><img class="lazy" title="Amazon Web Services" alt="Amazon Web Services" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/amazon-web-services.svg" style=""></li>
+                            <li><img class="lazy" title="Linode" alt="Linode" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/linode.svg" style=""></li>
+                            <li><img class="lazy" title="iCloud" alt="iCloud" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/icloud.svg" style=""></li>
+                        </ul>
+                    </div>
+                    <!-- END :: SERVICE #1 TAB -->
+
+                    <!-- BEGIN :: SERVICE #1 TAB -->
+                    <div class="tab-pane fade"  [ngClass]="{'show': currentTab=='db'}" role="tabpanel">
+                        <ul class="technologies_icons d-flex align-items-center justify-content-center">
+                            <li><img class="lazy" title="Firebase" alt="Firebase" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/firebase.svg" style=""></li>
+                            <li><img class="lazy" title="MongoDB" alt="MongoDB" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/mongodb.svg" style=""></li>
+                            <li><img class="lazy" title="MySQL" alt="MySQL" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/mysql.svg" style=""></li>
+                        </ul>
+                    </div>
+                    <!-- END :: SERVICE #1 TAB -->
+
+                    <!-- BEGIN :: SERVICE #1 TAB -->
+                    <div class="tab-pane fade"  [ngClass]="{'show': currentTab=='design'}" role="tabpanel">
+                        <ul class="technologies_icons d-flex align-items-center justify-content-center">
+                            <li><img class="lazy" title="Adobe Illustrator" alt="Adobe Illustrator" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/adobe-illustrator-cc.svg" style=""></li>
+                            <li><img class="lazy" title="Adobe After Effects" alt="Adobe After Effects" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/after-effects-cc.svg" style=""></li>
+                            <li><img class="lazy" title="Figma" alt="Figma" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/figma.svg" style=""></li>
+                            <li><img class="lazy" title="InVision" alt="InVision" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/invision.svg" style=""></li>
+                            <li><img class="lazy" title="Justinmind" alt="Justinmind" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/justinmind.svg" style=""></li>
+                            <li><img class="lazy" title="Adobe Photoshop" alt="Adobe Photoshop" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/photoshop-cc.svg" style=""></li>
+                            <li><img class="lazy" title="Sketch" alt="Sketch" src="https://www.intelivita.co.uk/assets/frameworks/public/images/technologies/sketch.svg" style=""></li>
+                        </ul>
+                    </div>
+                    <!-- END :: SERVICE #1 TAB -->
+              </div>
+        </div>
+    </div>
+</section>
+<!-- END :: TECHNOLOGIES WE USE -->
