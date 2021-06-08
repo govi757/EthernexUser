@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiConstants } from 'src/constants/apiConstants';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private REST_API_SERVER = "https://ethernex.herokuapp.com";
+  private REST_API_SERVER = ApiConstants.apiUrl;
   constructor(private httpClient: HttpClient) { }
 
   public getScreens(){
